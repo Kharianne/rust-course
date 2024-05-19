@@ -1,7 +1,7 @@
-use crate::modifications::modifications::{get_modified_input, AVAILABLE_MODIFICATIONS};
+use crate::operations::operations::{get_modified_input, AVAILABLE_OPERATIONS};
 use std::env;
 use std::error::Error;
-mod modifications;
+mod operations;
 
 fn main() -> Result<(), Box<dyn Error>> {
     let args: Vec<String> = env::args().collect();
@@ -10,7 +10,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         println!(
             "Provide the string modification type as an argument:
         {}",
-            AVAILABLE_MODIFICATIONS.join(", ")
+            AVAILABLE_OPERATIONS.join(", ")
         );
         std::process::exit(1);
     }
