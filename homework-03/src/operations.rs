@@ -205,6 +205,9 @@ pub mod operations {
         }
 
         pub fn parse_as_csv() -> Result<String, Box<dyn Error>> {
+            println!(
+                "Paste the CSV data below, to end reading press Ctrl+D (Ctrl+Z on Windows):\n"
+            );
             let mut rdr = csv::Reader::from_reader(io::stdin());
             let mut records: Vec<csv::StringRecord> = Vec::new();
 
